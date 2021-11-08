@@ -31,10 +31,10 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "misp_data/server-configs/:/var/www/MISP/app/Config/"
-      - "misp_data/logs/:/var/www/MISP/app/tmp/logs/"
-      - "misp_data/files/:/var/www/MISP/app/files"
-      - "misp_data/ssl/:/etc/nginx/certs"
+      - "./server-configs/:/var/www/MISP/app/Config/"
+      - "./logs/:/var/www/MISP/app/tmp/logs/"
+      - "./files/:/var/www/MISP/app/files"
+      - "./ssl/:/etc/nginx/certs"
 #      - "./examples/custom-entrypoint.sh:/custom-entrypoint.sh" # Use the example custom-entrypoint.sh
     environment:
       - "HOSTNAME=https://10.212.12.40"
@@ -64,4 +64,3 @@ services:
 
 volumes:
     mysql_data:
-    misp_data:
